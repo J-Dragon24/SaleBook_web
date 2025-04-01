@@ -8,6 +8,10 @@ import Cart from './pages/Cart.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import { UserProvider } from './Context/UserContext.jsx'
+import Dashboard from './components/Admin/AdminDashboard';
+import BookManagement from './components/Admin/BookManagement';
+import AccountManagement from './components/Admin/AccountManagement';
+import CategoryManagement from './components/Admin/CategoryManagement';
 
 const routers = createBrowserRouter([
   {
@@ -38,6 +42,18 @@ const routers = createBrowserRouter([
     path: "/register",
     element: <Register />
   },
+  {
+    path:"/admin" ,
+    element: <Dashboard />,
+  },
+  {
+    path:"/admin/book-management" ,
+    element: <BookManagement />,
+  },
+  {
+    path:"/admin/account-management" ,
+    element: <AccountManagement />,
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

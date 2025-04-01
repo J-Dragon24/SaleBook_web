@@ -14,7 +14,7 @@ app.use(cors());
 
 app.use('/users', userRouter)
 
-app.use('/', bookRouter)
+app.use('/books', bookRouter)
 
 app.get("/", (req, res) => {
     res.status(200).json({ message: "hello" });

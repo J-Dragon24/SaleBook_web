@@ -49,6 +49,20 @@ const bookController = {
         } catch (error) {
             res.status(500).json({ message: 'Error creating book', error: error.message });
         }
+    },
+    getBookById: async (req, res) => {
+        try {
+            const { id } = req.params; // Get book ID from request parameters
+            const book = await bookModel.findById(id);
+
+            if (!book) {
+                return res.status(404).json({ message: 'Book not found' });
+            }
+
+            res.status(200).json(book);
+        } catch (error) {
+            res.status(500).json({ message: 'Error fetching book', error: error.message });
+        }
     }
 };
 

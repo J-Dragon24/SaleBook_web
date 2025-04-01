@@ -1,13 +1,11 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const authorsSchema = new mongoose.Schema({
-    id: Number,
     name: String,
     slug: String,
 });
 
 const categoriesSchema = new mongoose.Schema({
-    id: Number,
     name: String,
     is_leaf: Boolean,
 });
